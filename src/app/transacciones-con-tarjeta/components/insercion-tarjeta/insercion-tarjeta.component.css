@@ -1,0 +1,9 @@
+@import '../../../../assets/styles/containers.css';
+
+.logo {
+    width: 10rem;
+}
+
+.tarjeta {
+    width: 25rem;
+}
