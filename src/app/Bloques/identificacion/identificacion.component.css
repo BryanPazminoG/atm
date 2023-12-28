@@ -1,4 +1,5 @@
-@import '../../../../assets/styles/containers.css';
+@import '../../../assets/styles/containers.css';
+
 
 .logo {
     width: 20rem;

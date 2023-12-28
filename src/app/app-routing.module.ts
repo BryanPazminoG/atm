@@ -6,11 +6,11 @@ import { ErrorComponent } from './Paginas/error/error.component';
 const routes: Routes = [
   {
     path: 'transacciont',
-    loadChildren: () => import('./transacciones-con-tarjeta/transacciones-con-tarjeta.module').then(m => m.TransaccionesConTarjetaModule)
+    loadChildren: () => import('../app/Paginas/transacciones-con-tarjeta/transacciones-con-tarjeta.module').then(m => m.TransaccionesConTarjetaModule)
   },
   {
     path: 'tipos',
-    loadChildren: () => import('./tipos-transacciones-sin-tarjeta/tipos-transacciones-sin-tarjeta.module').then(m => m.TiposTransaccionesSinTarjetaModule)
+    loadChildren: () => import('../app/Paginas/tipos-transacciones-sin-tarjeta/tipos-transacciones-sin-tarjeta.module').then(m => m.TiposTransaccionesSinTarjetaModule)
   },
 
   { path: '**', component: ErrorComponent }
