@@ -1,12 +1,13 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 
+
 @Component({
-  selector: 'app-identificacion',
-  templateUrl: './identificacion.component.html',
-  styleUrls: ['./identificacion.component.css']
+  selector: 'app-cantidad',
+  templateUrl: './cantidad.component.html',
+  styleUrls: ['./cantidad.component.css']
 })
-export class IdentificacionComponent {
+export class CantidadComponent {
   buttons: string[] = ['1', '2', '3', '4', '5', '6', '7', '8', '9', 'X', '0', '✓'];
   numeroIdentificacion: string = '';
   constructor(private router: Router) {}
