@@ -1,9 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { InsercionTarjetaComponent } from '../../Bloques/insercion-tarjeta/insercion-tarjeta.component';
+import { SelecciontComponent } from './selecciont/selecciont.component';
+import { DepositoconfirmctComponent } from './depositoconfirmct/depositoconfirmct.component';
 
 const routes: Routes = [
-  { path: '', component: InsercionTarjetaComponent}
+  { path: 'selecciont', component: SelecciontComponent},
+  { path: 'retiroconfirm', component: DepositoconfirmctComponent}
+
 ];
 
 @NgModule({
