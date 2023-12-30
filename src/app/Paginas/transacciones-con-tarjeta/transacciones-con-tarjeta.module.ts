@@ -10,10 +10,12 @@ import { TransaccionesConTarjetaRoutingModule } from './transacciones-con-tarjet
 // PrimeNG
 import { ButtonModule } from 'primeng/button';
 import { InputMaskModule } from 'primeng/inputmask';
+import { ComprobanteretiroctComponent } from './comprobanteretiroct/comprobanteretiroct.component';
 
 @NgModule({
   declarations: [
-    InsercionTarjetaComponent
+    InsercionTarjetaComponent,
+    ComprobanteretiroctComponent
   ],
   imports: [
     CommonModule,

@@ -13,6 +13,7 @@ import { ErrorComponent } from './Paginas/error/error.component';
 
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
