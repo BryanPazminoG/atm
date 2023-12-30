@@ -1,13 +1,20 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { SeleccionComponent } from '../../Bloques/seleccion/seleccion.component';
-import { DepositosComponent } from '../../Bloques/depositos/depositos.component';
-import { IdentificacionComponent } from '../../Bloques/identificacion/identificacion.component';
+import { SeleccionComponent } from './seleccion/seleccion.component';
+import { DepositosComponent } from './depositos/depositos.component';
+import { IdentificacionComponent } from './identificacion/identificacion.component';
+import { CuentaComponent } from './cuenta/cuenta.component';
+import { CantidadComponent } from './cantidad/cantidad.component';
+import { DepositoconfirmComponent } from './depositoconfirm/depositoconfirm.component';
 
 const routes: Routes = [
-  { path: '', component: SeleccionComponent },
+  { path: 'seleccion', component: SeleccionComponent },
   { path: 'depositos', component: DepositosComponent, },
-  { path: 'depositos/identification', component: IdentificacionComponent }
+  { path: 'depositos/identification', component: IdentificacionComponent },
+  { path: 'depositos/identification/cuenta', component: CuentaComponent },
+  { path: 'depositos/identification/cuenta/cantidad', component: CantidadComponent },
+  { path: 'depositos/identification/cuenta/cantidad/depositoconfirm', component: DepositoconfirmComponent }
+  
 ];
 
 @NgModule({
