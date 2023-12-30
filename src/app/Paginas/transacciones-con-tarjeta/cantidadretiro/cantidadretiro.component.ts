@@ -18,6 +18,7 @@ export class CantidadretiroComponent{
     }
     else if (button === '✓') {
       //this.router.navigate(['tipos/depositos/identification/cuenta']);
+      //g
     }
     else {
       if (this.numeroIdentificacion.length == 10) {
