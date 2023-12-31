@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-selecciont',
@@ -7,7 +9,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SelecciontComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
+  
+  retiros() {
+    this.router.navigate(['transacciont/catidadretiro']);
+  }
 
   ngOnInit() {
   }

@@ -10,7 +10,8 @@ import { AppComponent } from './app.component';
 
 import { ErrorComponent } from './Paginas/error/error.component';
 import { InicioComponent } from './Paginas/login/inicio/inicio.component';
-
+import { FormsModule } from '@angular/forms';
+import { CantidadretiroComponent } from './Paginas/transacciones-con-tarjeta/cantidadretiro/cantidadretiro.component';
 
 
 
@@ -20,13 +21,14 @@ import { InicioComponent } from './Paginas/login/inicio/inicio.component';
     AppComponent,
     ErrorComponent,
     InicioComponent,
-
+    CantidadretiroComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
