@@ -5,11 +5,7 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './comprobantedepositost.component.html',
   styleUrls: ['./comprobantedepositost.component.css']
 })
-export class ComprobantedepositostComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit() {
-  }
+export class ComprobantedepositostComponent {
 
 }
+
