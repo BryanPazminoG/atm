@@ -11,10 +11,10 @@ import { ComprobantedepositostComponent } from './comprobantedepositost/comproba
 const routes: Routes = [
   { path: 'seleccion', component: SeleccionComponent },
   { path: 'depositos', component: DepositosComponent, },
-  { path: 'depositos/identification', component: IdentificacionComponent },
-  { path: 'depositos/identification/cuenta', component: CuentaComponent },
-  { path: 'depositos/identification/cuenta/cantidad', component: CantidadComponent },
-  { path: 'depositos/identification/cuenta/cantidad/depositoconfirm', component: DepositoconfirmComponent },
+  { path: 'identification', component: IdentificacionComponent },
+  { path: 'cuenta', component: CuentaComponent },
+  { path: 'cantidad', component: CantidadComponent },
+  { path: 'depositoconfirm', component: DepositoconfirmComponent },
   { path: 'comprobantedepositos', component: ComprobantedepositostComponent}
   
   
