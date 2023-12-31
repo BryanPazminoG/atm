@@ -12,6 +12,10 @@ const routes: Routes = [
     path: 'tipos',
     loadChildren: () => import('../app/Paginas/tipos-transacciones-sin-tarjeta/tipos-transacciones-sin-tarjeta.module').then(m => m.TiposTransaccionesSinTarjetaModule)
   },
+  {
+    path: 'login',
+    loadChildren: () => import('../app/Paginas/login/login.module').then(m => m.LoginModule)
+  },
 
   { path: '**', component: ErrorComponent }
 ];

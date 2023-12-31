@@ -9,6 +9,7 @@ import { AppComponent } from './app.component';
 
 
 import { ErrorComponent } from './Paginas/error/error.component';
+import { InicioComponent } from './Paginas/login/inicio/inicio.component';
 
 
 
@@ -18,6 +19,7 @@ import { ErrorComponent } from './Paginas/error/error.component';
   declarations: [
     AppComponent,
     ErrorComponent,
+    InicioComponent,
 
   ],
   imports: [
