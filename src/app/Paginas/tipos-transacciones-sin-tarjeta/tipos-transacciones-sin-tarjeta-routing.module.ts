@@ -11,7 +11,7 @@ import { ComprobantedepositostComponent } from './comprobantedepositost/comproba
 const routes: Routes = [
   { path: 'seleccion', component: SeleccionComponent },
   { path: 'depositos', component: DepositosComponent, },
-  { path: 'identification', component: IdentificacionComponent },
+  { path: 'identificacion', component: IdentificacionComponent },
   { path: 'cuenta', component: CuentaComponent },
   { path: 'cantidad', component: CantidadComponent },
   { path: 'depositoconfirm', component: DepositoconfirmComponent },
