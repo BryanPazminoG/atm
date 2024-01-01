@@ -8,8 +8,6 @@ import { MenuComponent } from './menu/menu.component';
 
 @NgModule({
   declarations: [
-    
-  
     MenuComponent
   ],
   imports: [

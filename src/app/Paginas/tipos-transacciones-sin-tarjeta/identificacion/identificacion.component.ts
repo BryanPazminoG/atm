@@ -16,7 +16,7 @@ export class IdentificacionComponent {
       this.numeroIdentificacion = '';
     }
     else if (button === '✓') {
-      this.router.navigate(['tipos/depositos/identification/cuenta']);
+      this.router.navigate(['tipos/cuenta']);
     }
     else {
       if (this.numeroIdentificacion.length == 10) {
