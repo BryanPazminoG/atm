@@ -12,7 +12,10 @@ export class SelecciontComponent implements OnInit {
   constructor(private router: Router) { }
   
   retiros() {
-    this.router.navigate(['transacciont/catidadretiro']);
+    this.router.navigate(['transacciont/cantidadretiro']);
+  }
+  consultas() {
+    this.router.navigate(['transacciont/consultas']);
   }
 
   ngOnInit() {

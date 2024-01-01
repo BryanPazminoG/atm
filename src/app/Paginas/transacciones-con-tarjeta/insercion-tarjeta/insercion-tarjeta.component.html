@@ -2,11 +2,11 @@
     <img class="logo img-fluid mx-auto" src="../../../assets/img/login/banquito.png" alt="Logo">
     <div class="d-flex mx-auto gap-3">
         <div class="p-float-label">
-            <p-inputMask mask="9999 - 9999 - 9999 - 9999" [(ngModel)]="numeroTarjeta" id="ssn_input" [maxlength]="16"
+            <p-inputMask mask="9999 - 9999 - 9999 - 9999" name="numeroTarjeta" [(ngModel)]="numeroTarjeta" id="ssn_input" [maxlength]="16"
                 [minlength]="16" [required]="true" [autofocus]="true" [unmask]="true"></p-inputMask>
             <label htmlFor="ssn_input">Número de Tarjeta</label>
         </div>
-        <button pButton pRipple label="Ingresar" [disabled]="numeroTarjeta.length != 16" severity="secondary"
+        <button (click)="panelClave()" pButton pRipple label="Ingresar" [disabled]="numeroTarjeta.length != 16" severity="secondary"
             class="btn btn-success rounded"></button>
     </div>
     <div class="tarjeta img-fluid mx-auto">

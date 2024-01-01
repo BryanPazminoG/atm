@@ -26,4 +26,8 @@ export class PanelclaveComponent {
     }
   }
 
+  seleccionCt() {
+    this.router.navigate(['transacciont/selecciont']);
+  }
+
 }

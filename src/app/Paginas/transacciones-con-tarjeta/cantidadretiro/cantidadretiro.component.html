@@ -1,6 +1,4 @@
-<p>
-  cantidadretiro works!
-</p>
+
 <div class="screen-grid-horizontal">
   <div class="d-flex flex-column m-3 flex-grow-1">
       <img class="logo my-auto mx-auto" src="../../../assets/img/login/banquito.png" alt="Logo">
@@ -14,7 +12,7 @@
       <div class="grid-buttons flex-grow-1">
           <button pButton pRipple class="btn"
               [ngClass]="{'red' : button == 'X', 'green' : button == '✓'}" *ngFor="let button of buttons"
-              (click)="processButton(button)" >{{button}}</button>
+              (click)="processButton(button)" (click)="button === '✓' && confirmarRetiro()" >{{button}}</button>
       </div>
   </div>
 </div>

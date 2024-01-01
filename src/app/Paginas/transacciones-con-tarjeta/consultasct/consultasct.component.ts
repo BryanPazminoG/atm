@@ -1,17 +1,16 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 
-@Component({
-  selector: 'app-comprobanteretiroct',
-  templateUrl: './comprobanteretiroct.component.html',
-  styleUrls: ['./comprobanteretiroct.component.css']
-})
-export class ComprobanteretiroctComponent {
 
+@Component({
+  selector: 'app-consultasct',
+  templateUrl: './consultasct.component.html',
+  styleUrls: ['./consultasct.component.css']
+})
+export class ConsultasctComponent {
   constructor(private router: Router) { }
 
-  volver() {
+  regresar() {
     this.router.navigate(['transacciont/selecciont']);
   }
-
 }

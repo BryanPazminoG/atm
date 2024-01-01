@@ -16,6 +16,10 @@ const routes: Routes = [
     path: 'login',
     loadChildren: () => import('../app/Paginas/login/login.module').then(m => m.LoginModule)
   },
+  {
+    path: 'clave',
+    loadChildren: () => import('../app/Bloques/panel/panel.module').then(m => m.PanelModule)
+  },
 
   { path: '**', component: ErrorComponent }
 ];

@@ -8,9 +8,14 @@ import { FormsModule } from '@angular/forms';
   styleUrls: ['./cantidadretiro.component.css']
 })
 export class CantidadretiroComponent {
+  numeroIdentificacion: string='';
   buttons: string[] = ['1', '2', '3', '4', '5', '6', '7', '8', '9', 'X', '0', '✓'];
   cantidadRetiro: string = '';
   constructor(private router: Router) {}
+
+  confirmarRetiro() {
+    this.router.navigate(['transacciont/retiroconfirm']);
+  }
 
   processButton(button: string): void {
     if (button === 'X') {

@@ -11,7 +11,7 @@ export class MenuComponent {
   constructor(private router: Router) { }
 
   transaccionCt() {
-    this.router.navigate(['transacciont/selecciont']);
+    this.router.navigate(['transacciont/inserciontarjeta']);
   }
   transaccionSt() {
     this.router.navigate(['tipos/seleccion']);
