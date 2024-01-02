@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { BuscarcuentaService } from 'src/app/shared/buscarcuenta.service';
+import { BuscarCuenta } from 'src/app/shared/interfaces/buscarcuenta';
 
 @Component({
   selector: 'app-depositoconfirm',
@@ -6,5 +8,18 @@ import { Component } from '@angular/core';
   styleUrls: ['./depositoconfirm.component.css']
 })
 export class DepositoconfirmComponent {
-  numeroTarjeta: string = '';
+  constructor(private buscarcuentaservice: BuscarcuentaService) {
+
+  }
+  BuscarCuenta(id: string) {
+    this.buscarcuentaservice.burcarcuenta(id).subscribe({
+      next: (response) => {
+        const data: BuscarCuenta = response;
+        console.log(data);
+      }
+
+    });
+
+  }
+
 }
