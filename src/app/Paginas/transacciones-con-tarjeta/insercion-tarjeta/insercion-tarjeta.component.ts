@@ -14,39 +14,26 @@ export class InsercionTarjetaComponent {
 
   caracteresEnTarjeta: number = 16;
   numero: string = '';
-  pinencontrado: string = '';
-
+  
   printTarjeta(): void {
     console.log(this.numero);
     console.log(this.numero.replaceAll('-', ''));
   }
 
-  panelClave() {
-    // this.router.navigate(['clave/panel-clave']);
-    const numeroTarjeta = {
-      // codTarjeta: 1,
-      // codCuenta: 1,
-      numero: this.numero,
-      // fechaEmision: "2014-11-14T05:00:00.000+00:00",
-      // fechaVencimiento: "2021-12-01T05:00:00.000+00:00",
-      // cvc: "596",
-      // pin: "1234",
-      // tipoTarjeta: "DEB",
-      // redPago: "AMX",
-      // estado: "ACT",
-      // fechaUltimoCambio: "2024-01-01T05:00:00.000+00:00",
-      // version: 1
-    };
-
-    console.log(numeroTarjeta);
-
+  validarTarjeta() {
+    
     if (this.numero.length === this.caracteresEnTarjeta) {
       this.validartarjeta.validarNumeroTarjeta(this.numero)
         .subscribe(
           (data) => {
             console.log('Tarjeta encontrada con éxito', data);
-            // Puedes asignar los valores de la tarjeta a propiedades locales si es necesario
-            // this.pinencontrado = data.pin;
+            if (data && data.encontrada) {
+              // Si existe, redirige a la siguiente página
+              this.router.navigate(['clave/panel-clave']);
+            } else {
+              // Si no existe, muestra un mensaje de error
+              console.error('Número de tarjeta no encontrado en la base de datos');
+            }
           },
           (error) => {
             console.error('Error al buscar la tarjeta', error);

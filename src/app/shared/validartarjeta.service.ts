@@ -12,9 +12,8 @@ export class ValidartarjetaService {
   constructor(private http: HttpClient) { }
 
   validarNumeroTarjeta(numero: string): Observable<any> {
-    // let params = new HttpParams().set('numeroTarjeta', numero);
-    // return this.http.get<any>(this.validarTarjeta, {params: params});
-    let params = new HttpParams().set('numero', numero);
-    return this.http.get<any>(this.validarTarjeta, {params: params});
+    
+    const url = `${this.validarTarjeta}/${numero}`;
+    return this.http.get<any>(url);
   }
 }
