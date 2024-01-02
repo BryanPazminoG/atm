@@ -1,15 +1,18 @@
-<div class="screen-flex-vertical gap-5">
-    <img class="logo img-fluid mx-auto" src="../../../assets/img/login/banquito.png" alt="Logo">
-    <div class="d-flex mx-auto gap-3">
-        <div class="p-float-label">
-            <p-inputMask mask="9999 - 9999 - 9999 - 9999" name="numeroTarjeta" [(ngModel)]="numeroTarjeta" id="ssn_input" [maxlength]="16"
-                [minlength]="16" [required]="true" [autofocus]="true" [unmask]="true"></p-inputMask>
-            <label htmlFor="ssn_input">Número de Tarjeta</label>
+<form>
+    <div class="screen-flex-vertical gap-5">
+        <img class="logo img-fluid mx-auto" src="../../../assets/img/login/banquito.png" alt="Logo">
+        <div class="d-flex mx-auto gap-3">
+            <div class="p-float-label">
+                <p-inputMask mask="9999 - 9999 - 9999 - 9999" name="numero" [(ngModel)]="numero"
+                    id="numero" [maxlength]="16" [minlength]="16" [required]="true" [autofocus]="true"
+                    [unmask]="true"></p-inputMask>
+                <label htmlFor="ssn_input">Número de Tarjeta</label>
+            </div>
+            <button (click)="panelClave()" pButton pRipple label="Ingresar" [disabled]="numero.length != 16"
+                severity="secondary" class="btn btn-success rounded"></button>
         </div>
-        <button (click)="panelClave()" pButton pRipple label="Ingresar" [disabled]="numeroTarjeta.length != 16" severity="secondary"
-            class="btn btn-success rounded"></button>
+        <div class="tarjeta img-fluid mx-auto">
+            <img class="tarjeta" src="../../../../assets/img/tarjetas/tarjeta.svg" alt="Tarjeta">
+        </div>
     </div>
-    <div class="tarjeta img-fluid mx-auto">
-        <img class="tarjeta" src="../../../../assets/img/tarjetas/tarjeta.svg" alt="Tarjeta">
-    </div>
-</div>
+</form>
