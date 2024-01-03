@@ -16,6 +16,7 @@ export class FlujoDatosService {
   cantidadDeposito: number = 0;
   numeroCuenta: string = '';
   fechaRetiro: string = "";
+  fechaDeposito: string ="";
 
 
   constructor() {
@@ -96,5 +97,11 @@ export class FlujoDatosService {
   }
   GetFechaRetiro() {
     return this.fechaRetiro;
+  }
+  SetFechaDeposito(fechaDeposito: string) {
+    this.fechaDeposito = fechaDeposito;
+  }
+  GetFechaDeposito() {
+    return this.fechaDeposito;
   }
 }

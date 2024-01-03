@@ -16,21 +16,21 @@
           Deposito Bancario
         </p>
         <p style="font-size: 14px; line-height: 0.5em">
-          Se depositará la cantidad de: {{valorDeposito}}
+          Se depositará la cantidad de: {{ valorDeposito }}
         </p>
         <p style="font-size: 14px; line-height: 0.5em">
-          Al numero de cuenta: {{cuentaData.numeroCuenta}}
+          Al número de cuenta: {{ cuentaData.numeroCuenta }}
         </p>
         <p style="font-size: 14px; line-height: 0.5em">
-          Nombre del beneficiario: {{clientesData.apellidos}} {{clientesData.nombres}}
+          Nombre del beneficiario: {{ clientesData.apellidos }} {{ clientesData.nombres }}
         </p>
 
       </div>
       <div class="px-4 mt-3 d-flex justify-content-end align-items-end">
-        <button type="button" class="btn btn-success mx-1">
+        <button type="button" class="btn btn-success mx-1" (click)="continuar()">
           Confirmar
         </button>
-        <button type="button" class="btn btn-secondary mx-1">
+        <button type="button" class="btn btn-secondary mx-1"(click)="regresar()">
           Regresar
         </button>
       </div>

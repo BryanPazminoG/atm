@@ -35,7 +35,7 @@ export class IdentificacionComponent {
         }
           console.log(response);
         }
-      }); //poque se usa apis
+      }); 
       
     }
     else {
