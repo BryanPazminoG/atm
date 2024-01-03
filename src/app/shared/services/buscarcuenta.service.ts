@@ -10,10 +10,10 @@ import { Observable } from 'rxjs';
 export class BuscarcuentaService {
 url: string =''; 
   constructor(private http:HttpClient) {
-    this.url='http://localhost:8080/';
+    this.url='http://34.125.120.215:8080/';
    }
-   burcarcuenta(id : string):Observable<any> {
-    return this.http.get<any>(this.url + "cuenta/buscar/"+id);
+   buscarcuenta(numeroCuenta : string):Observable<any> {
+    return this.http.get<any>(this.url + "cuenta/buscar/"+ numeroCuenta);
    }
 
 

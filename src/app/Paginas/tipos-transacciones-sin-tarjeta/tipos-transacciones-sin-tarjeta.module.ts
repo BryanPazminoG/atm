@@ -9,12 +9,16 @@ import { InputMaskModule } from 'primeng/inputmask';
 import { FormsModule } from '@angular/forms';
 import { CuentaComponent } from './cuenta/cuenta.component';
 import { CantidadComponent } from './cantidad/cantidad.component';
+import { RucComponent } from './ruc/ruc.component';
+import { PasaporteComponent } from './pasaporte/pasaporte.component';
 
 @NgModule({
   declarations: [
     SeleccionComponent,
     DepositosComponent,
     IdentificacionComponent,
+    RucComponent,
+    PasaporteComponent,
     CuentaComponent,
     CantidadComponent
     

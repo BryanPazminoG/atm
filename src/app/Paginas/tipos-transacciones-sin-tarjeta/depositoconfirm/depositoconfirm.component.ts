@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { BuscarcuentaService } from 'src/app/shared/services/buscarcuenta.service';
 import { BuscarCuenta } from 'src/app/shared/interfaces/buscarcuenta';
 
@@ -7,15 +7,17 @@ import { BuscarCuenta } from 'src/app/shared/interfaces/buscarcuenta';
   templateUrl: './depositoconfirm.component.html',
   styleUrls: ['./depositoconfirm.component.css']
 })
-export class DepositoconfirmComponent {
+export class DepositoconfirmComponent implements OnInit{
   constructor(private buscarcuentaservice: BuscarcuentaService) {
 
   }
-  BuscarCuenta(id: string) {
-    this.buscarcuentaservice.burcarcuenta(id).subscribe({
+  ngOnInit(): void {
+    //this.buscarcuenta();
+  }
+  BuscarCuenta(numeroCuenta: string) {
+    this.buscarcuentaservice.buscarcuenta(numeroCuenta).subscribe({
       next: (response) => {
-        const data: BuscarCuenta = response;
-        console.log(data);
+        console.log(response);
       }
 
     });
