@@ -15,6 +15,8 @@ export class FlujoDatosService {
   validacionClave: boolean = false;
   cantidadDeposito: number = 0;
   numeroCuenta: string = '';
+  fechaRetiro: string = "";
+
 
   constructor() {
 
@@ -81,11 +83,17 @@ export class FlujoDatosService {
   GetCantidadDeposito() {
     return this.cantidadDeposito;
   }
+
   SetNumeroCuenta(datoIngresoNumC: string) {
     this.numeroCuenta = datoIngresoNumC;
   }
 
   GetNumeroCuenta() {
     return this.numeroCuenta;
+
+  SetFechaRetiro(fechaRetiro: string) {
+    this.fechaRetiro = fechaRetiro;
+  }
+  GetFechaRetiro() {
   }
 }
