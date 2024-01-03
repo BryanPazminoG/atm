@@ -12,7 +12,7 @@ import html2canvas from 'html2canvas';
 export class ComprobanteretiroctComponent implements OnInit{
 
   valorRetiro: number = 0;
-  fechaRetiro: string = "";
+  fechaRetiro: any = "";
 
   clientesData = {
     "codigo": 5,

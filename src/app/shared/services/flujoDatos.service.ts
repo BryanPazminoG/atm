@@ -90,7 +90,7 @@ export class FlujoDatosService {
 
   GetNumeroCuenta() {
     return this.numeroCuenta;
-
+  }
   SetFechaRetiro(fechaRetiro: string) {
     this.fechaRetiro = fechaRetiro;
   }
