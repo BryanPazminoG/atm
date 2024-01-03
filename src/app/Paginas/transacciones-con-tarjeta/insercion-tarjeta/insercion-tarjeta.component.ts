@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { AutoCompleteCompleteEvent } from 'primeng/autocomplete';
 import { Router } from '@angular/router';
-import { ValidartarjetaService } from 'src/app/shared/services/validartarjeta.service';
+import { ValidartarjetaService } from 'src/app/shared/validartarjeta.service';
 
 @Component({
   selector: 'app-insercion-tarjeta',
