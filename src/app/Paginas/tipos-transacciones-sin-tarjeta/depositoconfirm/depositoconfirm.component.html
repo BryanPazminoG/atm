@@ -1,30 +1,40 @@
-
 <div class="screen-flex-vertical gap-2">
   <div class="d-flex justify-content-between">
-      <label class="fw-bold fs-3 my-auto p-5">Depósitos</label>
-      <img class="logo m-2" src="../../../assets/img/login/banquito.png" alt="Logo">
+    <label class="fw-bold fs-3 my-auto p-5">Depósitos</label>
+    <img class="logo m-2" src="../../../assets/img/login/banquito.png" alt="Logo">
   </div>
   <div class="card fondo gap-5">
-      <div class="d-flex gap-3 mx-auto">
-          <label class="fw-bold fs-2">Confirmación de los datos del depósito:</label>
+    <div class="d-flex gap-3 mx-auto">
+      <label class="fw-bold fs-2">Confirmación de los datos del depósito:</label>
+    </div>
+    <div class="col-12 py-3 p-5">
+      <div>
+        <p style="color: #3d84a7; line-height: 0.8em">
+          <b>BANCO BANQUITO</b>
+        </p>
+        <p style="font-size: 14px; line-height: 0.5em">
+          Deposito Bancario
+        </p>
+        <p style="font-size: 14px; line-height: 0.5em">
+          Se depositará la cantidad de: {{valorDeposito}}
+        </p>
+        <p style="font-size: 14px; line-height: 0.5em">
+          Al numero de cuenta: {{cuentaData.numeroCuenta}}
+        </p>
+        <p style="font-size: 14px; line-height: 0.5em">
+          Nombre del beneficiario: {{clientesData.apellidos}} {{clientesData.nombres}}
+        </p>
+
       </div>
-      <div class="col-12 py-3 p-5" >
-        <div>
-            <strong>Se depositará la cantidad de:</strong>
-            <br>
-            <strong>A la cuenta:</strong>
-            <br>
-            <strong>Nombre del beneficiario:</strong>
-            <br><br>
-        </div>
-        <div class="px-4 mt-3 d-flex justify-content-end align-items-end">
-          <button type="button" class="btn btn-success mx-1">
-              Confirmar
-          </button>
-          <button type="button" class="btn btn-secondary mx-1">
-              Regresar
-          </button>
+      <div class="px-4 mt-3 d-flex justify-content-end align-items-end">
+        <button type="button" class="btn btn-success mx-1">
+          Confirmar
+        </button>
+        <button type="button" class="btn btn-secondary mx-1">
+          Regresar
+        </button>
       </div>
-    </div>   
+    </div>
   </div>
 </div>
+

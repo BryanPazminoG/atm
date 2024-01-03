@@ -13,8 +13,8 @@ export class FlujoDatosService {
   cuentaData: any;
   valorRetiro: number = 0;
   validacionClave: boolean = false;
- cantidadDeposito: number = 0;
-
+  cantidadDeposito: number = 0;
+  numeroCuenta: string = '';
 
   constructor() {
 
@@ -74,11 +74,18 @@ export class FlujoDatosService {
   GetValorRetiro() {
     return this.valorRetiro;
   }
-  SetCantidadDeposito(datoIngresoCantD : number){
-    this.cantidadDeposito=datoIngresoCantD;
+  SetCantidadDeposito(datoIngresoCantD: number) {
+    this.cantidadDeposito = datoIngresoCantD;
   }
-  
-  GetCantidadDeposito(){
+
+  GetCantidadDeposito() {
     return this.cantidadDeposito;
+  }
+  SetNumeroCuenta(datoIngresoNumC: string) {
+    this.numeroCuenta = datoIngresoNumC;
+  }
+
+  GetNumeroCuenta() {
+    return this.numeroCuenta;
   }
 }
