@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { AutoCompleteCompleteEvent } from 'primeng/autocomplete';
 import { Router } from '@angular/router';
-import { ValidartarjetaService } from 'src/app/shared/services/validartarjeta.service';
+import { ValidartarjetaService } from 'src/app/shared/validartarjeta.service';
 
 @Component({
   selector: 'app-insercion-tarjeta',
@@ -14,34 +14,38 @@ export class InsercionTarjetaComponent {
 
   caracteresEnTarjeta: number = 16;
   numero: string = '';
+  tarjetaencontrada: String = '';
   
   printTarjeta(): void {
     console.log(this.numero);
     console.log(this.numero.replaceAll('-', ''));
   }
+  
+  goToClave(){
+    this.router.navigate(['clave/panel-clave']);
+  }
 
-  validarTarjeta() {
+  validarTarjeta(): void {
     
-    if (this.numero.length === this.caracteresEnTarjeta) {
+   
       this.validartarjeta.validarNumeroTarjeta(this.numero)
         .subscribe(
           (data) => {
-            console.log('Tarjeta encontrada con éxito', data);
-            if (data && data.encontrada) {
-              // Si existe, redirige a la siguiente página
-              this.router.navigate(['clave/panel-clave']);
+            if (!data) {
+              alert('Tarjeta no encontrada. Verifique la información ingresada.')              
             } else {
-              // Si no existe, muestra un mensaje de error
-              console.error('Número de tarjeta no encontrado en la base de datos');
+              console.log('Tarjeta encontrada con éxito', data);
+              this.tarjetaencontrada = data;
+
+              this.goToClave()
+              
             }
           },
           (error) => {
             console.error('Error al buscar la tarjeta', error);
           }
         );
-    } else {
-      console.error('Longitud incorrecta del número de tarjeta');
-    }
+   
 
 
 
