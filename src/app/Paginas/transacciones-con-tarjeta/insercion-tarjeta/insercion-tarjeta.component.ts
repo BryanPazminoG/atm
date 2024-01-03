@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { AutoCompleteCompleteEvent } from 'primeng/autocomplete';
 import { Router } from '@angular/router';
 import { ValidartarjetaService } from 'src/app/shared/services/validartarjeta.service';
+import Swal from 'sweetalert2';
+import { FlujoDatosService } from 'src/app/shared/services/flujoDatos.service';
 
 @Component({
   selector: 'app-insercion-tarjeta',
@@ -10,44 +12,36 @@ import { ValidartarjetaService } from 'src/app/shared/services/validartarjeta.se
 })
 export class InsercionTarjetaComponent {
 
-  constructor(private validartarjeta: ValidartarjetaService, private router: Router) { }
+  constructor(private validartarjeta: ValidartarjetaService, private flujoDato:FlujoDatosService, private router: Router) { }
 
   caracteresEnTarjeta: number = 16;
   numero: string = '';
-  tarjetaencontrada: String = '';
+  tarjetaencontrada: string = '';
   
   printTarjeta(): void {
     console.log(this.numero);
     console.log(this.numero.replaceAll('-', ''));
   }
-  
-  goToClave(){
-    this.router.navigate(['clave/panel-clave']);
-  }
 
   validarTarjeta(): void {
-    
-   
       this.validartarjeta.validarNumeroTarjeta(this.numero)
         .subscribe(
           (data) => {
             if (!data) {
-              alert('Tarjeta no encontrada. Verifique la información ingresada.')              
+              Swal.fire({
+                icon: "error",
+                title: "Error",
+                text: "El numero de la tarjeta es incorrecta!",
+              });       
             } else {
-              console.log('Tarjeta encontrada con éxito', data);
-              this.tarjetaencontrada = data;
-
-              this.goToClave()
-              
+              this.tarjetaencontrada = data;  
+              this.flujoDato.SetTargeta(this.tarjetaencontrada);
+              this.router.navigate(['clave/panel-clave']);            
             }
           },
           (error) => {
             console.error('Error al buscar la tarjeta', error);
           }
         );
-   
-
-
-
   }
 }

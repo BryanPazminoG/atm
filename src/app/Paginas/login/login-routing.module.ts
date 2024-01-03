@@ -4,6 +4,7 @@ import { InicioComponent } from './inicio/inicio.component';
 import { MenuComponent } from './menu/menu.component';
 
 const routes: Routes = [
+  { path: '', redirectTo: 'inicio', pathMatch: 'full' },
   { path: 'inicio', component: InicioComponent },
   { path: 'inicio-menu', component: MenuComponent }
   

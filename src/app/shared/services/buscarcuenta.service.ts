@@ -15,7 +15,7 @@ url: string ='';
    buscarcuenta(numeroCuenta : string):Observable<any> {
     return this.http.get<any>(this.url + "cuenta/buscar/"+ numeroCuenta);
    }
-
-
-  
+   buscarcuentaById(codCuenta : number):Observable<any> {
+    return this.http.get<any>(this.url + "cuenta/getbyid/"+ codCuenta);
+   }
 }

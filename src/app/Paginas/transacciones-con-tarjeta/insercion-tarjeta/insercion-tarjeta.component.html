@@ -1,4 +1,4 @@
-<form (ngSubmit)="validarTarjeta()">
+<form>
     <div class="screen-flex-vertical gap-5">
         <img class="logo img-fluid mx-auto" src="../../../assets/img/login/banquito.png" alt="Logo">
         <div class="d-flex mx-auto gap-3">
@@ -9,7 +9,7 @@
                 <label htmlFor="ssn_input">Número de Tarjeta</label>
             </div>
             <button type="submit"  pButton pRipple label="Ingresar" [disabled]="numero.length != 16"
-                severity="secondary" class="btn btn-success rounded"></button>
+                severity="secondary" class="btn btn-success rounded" (click)="validarTarjeta()"></button>
         </div>
         <div class="tarjeta img-fluid mx-auto">
             <img class="tarjeta" src="../../../../assets/img/tarjetas/tarjeta.svg" alt="Tarjeta">

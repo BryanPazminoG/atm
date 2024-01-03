@@ -4,6 +4,8 @@ import { ErrorComponent } from './Paginas/error/error.component';
 
 
 const routes: Routes = [
+  { path: '', redirectTo: 'login', pathMatch: 'full' },
+
   {
     path: 'transacciont',
     loadChildren: () => import('../app/Paginas/transacciones-con-tarjeta/transacciones-con-tarjeta.module').then(m => m.TransaccionesConTarjetaModule)

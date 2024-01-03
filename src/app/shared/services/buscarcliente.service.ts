@@ -8,11 +8,14 @@ import { Observable } from 'rxjs';
 export class BuscarclienteService {
 url: string = '';
 constructor(private http:HttpClient) { 
-  this.url='http://localhost:8080/';
+  this.url='http://34.102.85.160:8080/';
 }
 buscarCliente(tipoI : string,numeroIdentificacion : string):Observable<any>{
   let params = new HttpParams().set('tipo', tipoI).set('numero', numeroIdentificacion)
   return this.http.get<any>(this.url + "cliente/buscar", { params: params });
-  
+}
+buscarClienteById(codCliente: number):Observable<any>{
+  let params = new HttpParams().set('id', codCliente);
+  return this.http.get<any>(this.url + "cliente/buscar-cliente", { params: params });
 }
 }
