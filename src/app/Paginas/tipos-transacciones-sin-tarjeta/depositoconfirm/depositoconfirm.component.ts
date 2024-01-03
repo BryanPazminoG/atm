@@ -3,6 +3,7 @@ import { BuscarcuentaService } from 'src/app/shared/services/buscarcuenta.servic
 import { FlujoDatosService } from 'src/app/shared/services/flujoDatos.service';
 import { BuscarclienteService } from 'src/app/shared/services/buscarcliente.service';
 import { Router } from '@angular/router';
+import { GuardarDepositoService } from 'src/app/shared/services/guardarDeposito.service';
 
 @Component({
   selector: 'app-depositoconfirm',
@@ -33,13 +34,15 @@ constructor(
       private router: Router,
       private flujoDatos: FlujoDatosService,
       private cuentaService: BuscarcuentaService,
-      private clienteService: BuscarclienteService 
+      private clienteService: BuscarclienteService,
+      private guardarDeposito: GuardarDepositoService
     ) { }
 
   ngOnInit(): void {
     this.valorDeposito = this.flujoDatos.GetCantidadDeposito();
     this.numeroCuenta = this.flujoDatos.GetNumeroCuenta();
     this.clientesData = this.flujoDatos.GetClientesData();
+
     this.getCuenta();
   }
 
@@ -66,10 +69,40 @@ constructor(
       }
     });
   }
-  continuar(){
-    this.router.navigate(['tipos/comprobantedepositos']);
-  }
   regresar(){
     this.router.navigate(['tipos/cantidad']);
+  }
+
+  convertirFechaAString(fecha: Date) {
+    // Obtén los componentes de la fecha
+    const año = fecha.getFullYear();
+    const mes = ('0' + (fecha.getMonth() + 1)).slice(-2); // Se agrega 1 porque los meses comienzan desde 0
+    const dia = ('0' + fecha.getDate()).slice(-2);
+    const horas = ('0' + fecha.getHours()).slice(-2);
+    const minutos = ('0' + fecha.getMinutes()).slice(-2);
+    const segundos = ('0' + fecha.getSeconds()).slice(-2);
+
+    // Formatea la cadena de fecha
+    const cadenaFecha = `${año}-${mes}-${dia} ${horas}:${minutos}:${segundos}`;
+
+    return cadenaFecha;
+  }
+  salida() {
+    this.fechaDeposito = this.convertirFechaAString(new Date());
+    let registroDeposito = {
+      "numeroCuenta": this.numeroCuenta,
+      "valorDebe": this.valorDeposito,
+      "fechaCreacion": this.fechaDeposito
+  }
+console.log(registroDeposito);
+    this.guardarDeposito.guardarDeposito(registroDeposito).subscribe(
+      {
+        next: (response) => {
+          if (response != null) {
+            this.router.navigate(['tipos/comprobantedepositos']);
+          }
+        }
+      }
+    );
   }
 }

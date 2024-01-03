@@ -85,6 +85,7 @@ export class ComprobantedepositostComponent implements OnInit{
     }
     pdf.save('comprobante_deposito.pdf');
   }
+  
 
   volver() {
     this.router.navigate(['tipos/depositos']);

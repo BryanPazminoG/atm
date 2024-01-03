@@ -1,6 +1,6 @@
 <div class="screen-flex-vertical gap-2">
     
-  <div class="card fondo gap-5">
+  <div class="card fondo gap-5" #contenedor>
       <div class="d-flex gap-3 mx-auto">
           <label class="fw-bold fs-2">Transacción existosa</label>
       </div>
@@ -24,6 +24,9 @@
           <button type="submit" class="btn btn-success mx-1" >
               Realizar otra transacción
           </button>
+          <button type="submit" class="btn btn-success mx-1" (click)="Imprimir()" >
+            Imprimir
+        </button>
       </div>
   </div>
 </div>
