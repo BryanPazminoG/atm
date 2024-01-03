@@ -7,7 +7,7 @@
                 </div>
                 <div class="row contenido my-3 p-5 rounded-4">
                     <h5>Consultas Bancarias</h5>
-                    <form action="">
+                    <form action="" #contenedor>
                         <div class="col-12 my-3 p-4 rounded-3" style="background-color: #ececec">
                             <p style="color: #3d84a7; line-height: 0.8em">
                                 <b>BANCO BANQUITO</b>
@@ -31,13 +31,10 @@
                             <p style="font-size: 14px; line-height: 0.5em">
                                 Contable: {{cuentaData.saldoContable}}
                             </p>
-                            
-                            
-                            
                         </div>
                     </form>
                     <div class="px-4 mt-3">
-                        <button  type="button" class="btn btn-success mx-1">
+                        <button  type="button" class="btn btn-success mx-1" (click)="Imprimir()">
                             Imprimir
                         </button>
                         <button (click)="regresar() " type="button" class="btn btn-secondary mx-1">

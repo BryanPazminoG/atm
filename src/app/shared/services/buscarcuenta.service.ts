@@ -18,4 +18,7 @@ url: string ='';
    buscarcuentaById(codCuenta : number):Observable<any> {
     return this.http.get<any>(this.url + "cuenta/getbyid/"+ codCuenta);
    }
+   TransaccionRetiro(RegistroRetiro : any):Observable<any> {
+    return this.http.post<any>(this.url + "transaccion/retirar", RegistroRetiro);
+   }
 }
