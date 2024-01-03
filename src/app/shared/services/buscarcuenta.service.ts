@@ -17,8 +17,5 @@ url: string ='';
    }
 
 
-   //buscarClientePorParametros(tipo: string, numero: string): Observable<any> {
-  //   let params = new HttpParams().set('tipo', tipo).set('numero', numero);
-  //   return this.http.get<any>(this.buscarClienteApi, { params: params });
-  // }
+  
 }

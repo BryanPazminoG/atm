@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./seleccion.component.css']
 })
 export class SeleccionComponent {
-  numeroTarjeta: string = '';
+
 }

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { BuscarcuentaService } from 'src/app/shared/buscarcuenta.service';
+import { BuscarcuentaService } from 'src/app/shared/services/buscarcuenta.service';
 import { BuscarCuenta } from 'src/app/shared/interfaces/buscarcuenta';
 
 @Component({
