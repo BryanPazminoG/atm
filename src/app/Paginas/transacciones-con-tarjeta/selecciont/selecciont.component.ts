@@ -31,6 +31,7 @@ export class SelecciontComponent implements OnInit {
   constructor(private router: Router, private flujoDatos:FlujoDatosService, private cuentaService:BuscarcuentaService, private clienteService:BuscarclienteService) { }
   
   ngOnInit(): void {
+    this.targetaData = this.flujoDatos.GetTargeta();
     this.getCuenta();
   }
   getCuenta(){

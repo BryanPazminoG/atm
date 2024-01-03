@@ -18,20 +18,18 @@ export class ConsultasctComponent implements OnInit{
     "nombres": "Edison Javier",
   };
   cuentaData = {
+    "codCuenta": 0,
     "numeroCuenta": "",
     "codTipoCuenta": "",
     "codCliente": 0,
     "saldoContable": 0,
     "saldoDisponible": 0,
 };
-  targetaData = {
-    "codCuenta": 0,
-  };
+
   constructor(private router: Router, private flujoDatos:FlujoDatosService, private cuentaService:BuscarcuentaService, private clienteService:BuscarclienteService) { }
   ngOnInit(): void {
-    this.targetaData = this.flujoDatos.GetTargeta();
-    this.clientesData = this.flujoDatos.GetClientesData();
     this.cuentaData = this.flujoDatos.GetCuentaData();
+    this.clientesData = this.flujoDatos.GetClientesData();
   }
   // getCuenta(){
   //   if(this.targetaData.codCuenta != 0){
