@@ -25,18 +25,18 @@ export class IdentificacionComponent {
         next: (response) => {
         if(response!=null){
           this.servicioDato.SetNumeroIdentificacion(this.numeroIdentificacion);
+          this.router.navigate(['tipos/cuenta']);
         }else {
           Swal.fire({
             icon: "error",
             title: "Oops...",
-            text: "Something went wrong!",
-            footer: '<a href="#">Why do I have this issue?</a>'
+            text: "Ha ocurrido un error!",
           });
         }
           console.log(response);
         }
       }); //poque se usa apis
-      this.router.navigate(['tipos/cuenta']);
+      
     }
     else {
       if (this.numeroIdentificacion.length == 10) {

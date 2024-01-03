@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 export class BuscarclienteService {
 url: string = '';
 constructor(private http:HttpClient) { 
-  this.url='http://localhost:8080/';
+  this.url='http://34.102.85.160:8080/';
 }
 buscarCliente(tipoI : string,numeroIdentificacion : string):Observable<any>{
   let params = new HttpParams().set('tipo', tipoI).set('numero', numeroIdentificacion)
