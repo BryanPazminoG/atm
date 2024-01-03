@@ -5,9 +5,6 @@ import { PanelclaveComponent } from "./panelclave/panelclave.component";
 
 const routes: Routes = [
     { path: 'panel-clave', component: PanelclaveComponent },
-    
-    
-    
   ];
   
   @NgModule({

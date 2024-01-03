@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Observable, of } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -11,6 +12,7 @@ export class FlujoDatosService {
   clientesData: any;
   cuentaData: any;
   valorRetiro: number = 0;
+  validacionClave: boolean = false;
 
 
   constructor() {
@@ -56,7 +58,12 @@ export class FlujoDatosService {
   SetCuentaData(cuentaData: any) {
     this.cuentaData = cuentaData;
   }
-
+  SetValidacionClave(validacionClave: boolean) {
+    this.validacionClave = validacionClave;
+  }
+  GetValidacionClave(): Observable<boolean> {
+    return of(this.validacionClave);
+  }
   GetCuentaData() {
     return this.cuentaData;
   }

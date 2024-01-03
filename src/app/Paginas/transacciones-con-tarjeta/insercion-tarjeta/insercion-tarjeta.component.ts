@@ -34,7 +34,7 @@ export class InsercionTarjetaComponent {
                 text: "El numero de la tarjeta es incorrecta!",
               });       
             } else {
-              this.tarjetaencontrada = data;  
+              this.tarjetaencontrada = data;
               this.flujoDato.SetTargeta(this.tarjetaencontrada);
               this.router.navigate(['clave/panel-clave']);            
             }

@@ -36,8 +36,10 @@ export class PanelclaveComponent implements OnInit{
   }
 
   seleccionCt() {
-    if(this.numeroClave == this.targetaClave.pin)
+    if(this.numeroClave == this.targetaClave.pin){
+      this.datosFlujo.SetValidacionClave(true);
       this.router.navigate(['transacciont/selecciont']);
+    }
     else{
       Swal.fire({
         icon: "error",
