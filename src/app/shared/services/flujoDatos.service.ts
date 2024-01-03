@@ -95,5 +95,6 @@ export class FlujoDatosService {
     this.fechaRetiro = fechaRetiro;
   }
   GetFechaRetiro() {
+    return this.fechaRetiro;
   }
 }
