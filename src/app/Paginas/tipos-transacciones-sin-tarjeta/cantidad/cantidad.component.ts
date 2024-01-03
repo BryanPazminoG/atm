@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import Swal from 'sweetalert2';
 
 
 @Component({
@@ -9,21 +10,31 @@ import { Router } from '@angular/router';
 })
 export class CantidadComponent {
   buttons: string[] = ['1', '2', '3', '4', '5', '6', '7', '8', '9', 'X', '0', '✓'];
-  numeroCantidad: string = '';
-  constructor(private router: Router) {}
+  cantidadDeposito: string = '';
+
+  constructor(private router: Router) { }
 
   processButton(button: string): void {
     if (button === 'X') {
-      this.numeroCantidad = '';
+      this.cantidadDeposito = '';
     }
     else if (button === '✓') {
-      this.router.navigate(['tipos/cantidad']);
+      if (this.cantidadDeposito.length <= 3) {
+        Swal.fire("La cantidad a depositar es" + this.cantidadDeposito);
+        this.router.navigate(['tipos/depositoconfirm']);
+        console.log("OK");
+      }
     }
     else {
-      if (this.numeroCantidad.length == 10) {
+      if (this.cantidadDeposito.length == 3) {
         return;
       }
-      this.numeroCantidad += button;
+      let auxValor = this.cantidadDeposito;
+      this.cantidadDeposito += button;
+      let valor = parseInt(this.cantidadDeposito);
+      if (valor > 100) {
+        this.cantidadDeposito = auxValor;
+      }
     }
   }
 }

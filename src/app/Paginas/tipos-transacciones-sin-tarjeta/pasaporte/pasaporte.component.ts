@@ -24,19 +24,18 @@ export class PasaporteComponent  {
       this.validarExistenciaCliente.buscarCliente('PAS', this.numeroPasaporte).subscribe({
         next: (response) => {
         if(response!=null){
-          this.servicioDato.SetNumeroIdentificacion(this.numeroPasaporte);
+          this.servicioDato.SetNumeroPasaporte(this.numeroPasaporte);
+          this.router.navigate(['tipos/cuenta']);
         }else {
           Swal.fire({
             icon: "error",
-            title: "Oops...",
-            text: "Something went wrong!",
-            footer: '<a href="#">Why do I have this issue?</a>'
+            title: "Identificacion incorrecta",
+            text: "No se ha encontrado el pasaporte ingresado.",
           });
         }
           console.log(response);
         }
       }); //poque se usa apis
-      this.router.navigate(['tipos/cuenta']);
     }
     else {
       if (this.numeroPasaporte.length == 13) {

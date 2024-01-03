@@ -29,8 +29,8 @@ export class IdentificacionComponent {
         }else {
           Swal.fire({
             icon: "error",
-            title: "Oops...",
-            text: "Ha ocurrido un error!",
+            title: "Identificacion incorrecta",
+            text: "No se ha encontrado la cedula ingresada.",
           });
         }
           console.log(response);

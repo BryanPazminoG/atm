@@ -25,19 +25,19 @@ export class RucComponent  {
       this.validarExistenciaCliente.buscarCliente('RUC', this.numeroRuc).subscribe({
         next: (response) => {
         if(response!=null){
-          this.servicioDato.SetNumeroIdentificacion(this.numeroRuc);
+          this.servicioDato.SetNumeroRuc(this.numeroRuc);
+          this.router.navigate(['tipos/cuenta']);
         }else {
           Swal.fire({
             icon: "error",
-            title: "Oops...",
-            text: "Something went wrong!",
-            footer: '<a href="#">Why do I have this issue?</a>'
+            title: "Identificacion incorrecta",
+            text: "No se ha encontrado el RUC ingresado.",
           });
         }
           console.log(response);
         }
       }); //poque se usa apis
-      this.router.navigate(['tipos/cuenta']);
+
     }
     else {
       if (this.numeroRuc.length == 13) {

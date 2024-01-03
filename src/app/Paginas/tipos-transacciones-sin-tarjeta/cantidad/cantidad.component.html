@@ -5,9 +5,12 @@
     </div>
     <div class="flex-grow-1 p-3 d-flex flex-column gap-4">
         <div class="d-flex m-5 form-group px-4">
-            <input type="text" class="rounded form-control input-lg" [(ngModel)]="numeroCantidad"
-                [disabled]="true">
+            <span class="input-group-prepend">
+                <span class="input-group-text">$</span>
+            </span>
+            <input type="text" class="rounded form-control input-lg" [(ngModel)]="cantidadDeposito" [disabled]="true">
         </div>
+        
         <div class="grid-buttons flex-grow-1">
             <button pButton pRipple class="btn"
                 [ngClass]="{'red' : button == 'X', 'green' : button == '✓'}" *ngFor="let button of buttons"
