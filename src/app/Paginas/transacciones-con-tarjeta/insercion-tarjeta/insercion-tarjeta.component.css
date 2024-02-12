@@ -8,3 +8,7 @@
 .tarjeta {
     width: 25rem;
 }
+
+.p-inputtext.p-component.p-element.p-inputmask.p-filled {
+    width: 800px; 
+}

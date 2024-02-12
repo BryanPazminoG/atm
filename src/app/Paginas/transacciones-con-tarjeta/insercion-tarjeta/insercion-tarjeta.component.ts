@@ -14,7 +14,7 @@ export class InsercionTarjetaComponent {
 
   constructor(private validartarjeta: ValidartarjetaService, private flujoDato:FlujoDatosService, private router: Router) { }
 
-  caracteresEnTarjeta: number = 16;
+  caracteresEnTarjeta: number = 18;
   numero: string = '';
   tarjetaencontrada: string = '';
   

@@ -10,15 +10,15 @@ import { Observable } from 'rxjs';
 export class BuscarcuentaService {
 url: string =''; 
   constructor(private http:HttpClient) {
-    this.url='http://34.125.120.215:8080/';
+    this.url='http://35.192.152.130:8089/api/v1/cuentas/';
    }
    buscarcuenta(numeroCuenta : string):Observable<any> {
-    return this.http.get<any>(this.url + "cuenta/buscar/"+ numeroCuenta);
+    return this.http.get<any>(this.url + "numero/"+ numeroCuenta);
    }
    buscarcuentaById(codCuenta : number):Observable<any> {
-    return this.http.get<any>(this.url + "cuenta/getbyid/"+ codCuenta);
+    return this.http.get<any>(this.url + codCuenta);
    }
    TransaccionRetiro(RegistroRetiro : any):Observable<any> {
-    return this.http.post<any>(this.url + "transaccion/retirar", RegistroRetiro);
+    return this.http.post<any>(this.url + "retiros/", RegistroRetiro); 
    }
 }
