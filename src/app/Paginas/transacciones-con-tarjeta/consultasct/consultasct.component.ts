@@ -28,8 +28,15 @@ export class ConsultasctComponent implements OnInit{
 
   constructor(private router: Router, private flujoDatos:FlujoDatosService) { }
   ngOnInit(): void {
+    console.log(this.flujoDatos);
+    
     this.cuentaData = this.flujoDatos.GetCuentaData();
+    console.log(this.cuentaData);
+
     this.clientesData = this.flujoDatos.GetClientesData();
+    console.log(this.clientesData);
+
+    
   }
 
   async Imprimir() {

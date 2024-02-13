@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class ValidartarjetaService {
 
-  private validarTarjeta = "http://35.192.152.130:8089/api/v1/tarjetas/numero/";
+  private validarTarjeta = "http://35.192.152.130:8089/api/v1/tarjetas/numero";
 
   constructor(private http: HttpClient) { }
 

@@ -53,20 +53,20 @@ export class RetiroconfirmctComponent implements OnInit {
     this.fechaRetiro = this.convertirFechaAString(new Date());
     let retiroRegistro = {
       "numeroCuenta": this.cuentaData.numeroCuenta,
-      "valorHaber": this.valorRetiro,
-      "fechaCreacion": this.fechaRetiro,
+      "valorHaber": this.valorRetiro      
     }
+    console.log(retiroRegistro);
 
-    this.cuentaService.TransaccionRetiro(retiroRegistro).subscribe(
-      {
-        next: (response) => {
-          if (response != null) {
-            this.flujoDatos.SetFechaRetiro(this.fechaRetiro);
-            this.router.navigate(['transacciont/salida']);
-          }
-        }
+    this.cuentaService.TransaccionRetiro(retiroRegistro).subscribe({
+      next: () => {
+        this.flujoDatos.SetFechaRetiro(this.fechaRetiro);
+        this.router.navigate(['transacciont/salida']);
+      },
+      error: (error) => {
+        console.error('Error al realizar la transacción de retiro:', error);
       }
-    );
+    });
+    
   }
 
 }

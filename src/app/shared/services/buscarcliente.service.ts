@@ -15,7 +15,7 @@ buscarCliente(tipoI : string,numeroIdentificacion : string):Observable<any>{
   return this.http.get<any>(this.url , { params: params });
 }
 buscarClienteById(codCliente: number):Observable<any>{
-  let params = new HttpParams().set('id', codCliente);
-  return this.http.get<any>(this.url , { params: params });
+  const url = `${this.url}${codCliente}`;
+    return this.http.get<any>(url);
 }
 } 

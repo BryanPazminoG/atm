@@ -33,6 +33,7 @@ export class SelecciontComponent implements OnInit {
   ngOnInit(): void {
     this.targetaData = this.flujoDatos.GetTargeta();
     this.getCuenta();
+    console.log(this.getCuenta);
   }
   getCuenta(){
     if(this.targetaData.codCuenta != 0){
@@ -42,7 +43,9 @@ export class SelecciontComponent implements OnInit {
             if(response!=null){
               this.cuentaData = response;
               this.flujoDatos.SetCuentaData(this.cuentaData);
-              this.getCliente();
+              console.log(this.cuentaData);
+              console.log(this.flujoDatos);
+              this.getCliente(); 
             }
           }
         }
@@ -57,6 +60,8 @@ export class SelecciontComponent implements OnInit {
             if(response!=null){
               this.clientesData = response;
               this.flujoDatos.SetClientesData(this.clientesData);
+              console.log(this.clientesData);
+              console.log( this.flujoDatos);
             }
           }
         }

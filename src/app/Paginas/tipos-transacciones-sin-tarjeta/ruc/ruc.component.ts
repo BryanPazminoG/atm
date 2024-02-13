@@ -22,22 +22,7 @@ export class RucComponent  {
       this.numeroRuc = '';
     }
     else if (button === '✓') {
-      this.validarExistenciaCliente.buscarCliente('RUC', this.numeroRuc).subscribe({
-        next: (response) => {
-        if(response!=null){
-          this.servicioDato.SetNumeroRuc(this.numeroRuc);
-          this.router.navigate(['tipos/cuenta']);
-        }else {
-          Swal.fire({
-            icon: "error",
-            title: "Identificacion incorrecta",
-            text: "No se ha encontrado el RUC ingresado.",
-          });
-        }
-          console.log(response);
-        }
-      }); //poque se usa apis
-
+      this.router.navigate(['tipos/cuenta']);
     }
     else {
       if (this.numeroRuc.length == 13) {

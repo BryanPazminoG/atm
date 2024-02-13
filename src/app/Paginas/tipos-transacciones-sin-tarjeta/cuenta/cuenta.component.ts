@@ -39,7 +39,7 @@ export class CuentaComponent {
 
     }
     else {
-      if (this.numeroCuenta.length == 8) {
+      if (this.numeroCuenta.length == 10) {
         return;
       }
       this.numeroCuenta += button;

@@ -12,7 +12,14 @@
             <div>
                 <strong>Se ha retirado la cantidad de: {{valorRetiro}}</strong>
                 <br>
-                <strong>Tipo cuenta: {{cuentaData.codTipoCuenta}}</strong>
+                <strong>Tipo cuenta: 
+                    <ng-container *ngIf="cuentaData.codTipoCuenta === 'CTA_AHOR'">
+                        AHORROS
+                    </ng-container>
+                    <ng-container *ngIf="cuentaData.codTipoCuenta !== 'CTA_AHOR'">
+                        {{ cuentaData.codTipoCuenta }}
+                    </ng-container>
+                </strong>
                 <br>
                 <strong>Numero de cuenta: {{cuentaData.numeroCuenta}}</strong>
                 <br>

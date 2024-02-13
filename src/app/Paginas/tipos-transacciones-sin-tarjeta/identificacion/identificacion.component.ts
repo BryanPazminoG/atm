@@ -21,22 +21,7 @@ export class IdentificacionComponent {
       this.numeroIdentificacion = '';
     }
     else if (button === '✓') {
-      this.validarExistenciaCliente.buscarCliente('CED', this.numeroIdentificacion).subscribe({
-        next: (response) => {
-        if(response!=null){
-          this.servicioDato.SetNumeroIdentificacion(this.numeroIdentificacion);
-          this.router.navigate(['tipos/cuenta']);
-        }else {
-          Swal.fire({
-            icon: "error",
-            title: "Identificacion incorrecta",
-            text: "No se ha encontrado la cedula ingresada.",
-          });
-        }
-          console.log(response);
-        }
-      }); 
-      
+      this.router.navigate(['tipos/cuenta']);
     }
     else {
       if (this.numeroIdentificacion.length == 10) {

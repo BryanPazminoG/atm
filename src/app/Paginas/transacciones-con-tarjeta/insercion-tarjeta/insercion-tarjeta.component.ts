@@ -14,7 +14,7 @@ export class InsercionTarjetaComponent {
 
   constructor(private validartarjeta: ValidartarjetaService, private flujoDato:FlujoDatosService, private router: Router) { }
 
-  caracteresEnTarjeta: number = 18;
+  caracteresEnTarjeta: number = 16;
   numero: string = '';
   tarjetaencontrada: string = '';
   
@@ -36,11 +36,18 @@ export class InsercionTarjetaComponent {
             } else {
               this.tarjetaencontrada = data;
               this.flujoDato.SetTargeta(this.tarjetaencontrada);
-              this.router.navigate(['clave/panel-clave']);            
+              this.router.navigate(['clave/panel-clave']);   
+                       
             }
           },
           (error) => {
+            console.log(this.numero);
             console.error('Error al buscar la tarjeta', error);
+            Swal.fire({
+              icon: "error",
+              title: "Error",
+              text: "El numero de la tarjeta es incorrecta!",
+            }); 
           }
         );
   }

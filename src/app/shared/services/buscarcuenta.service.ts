@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
@@ -9,16 +9,23 @@ import { Observable } from 'rxjs';
 
 export class BuscarcuentaService {
 url: string =''; 
+urlt: string =''; 
   constructor(private http:HttpClient) {
-    this.url='http://35.192.152.130:8089/api/v1/cuentas/';
+    this.url='http://35.192.152.130:8089/api/v1/cuentas/'; 
+    this.urlt='http://35.192.152.130:8089/api/v1/transacciones/'; 
    }
    buscarcuenta(numeroCuenta : string):Observable<any> {
     return this.http.get<any>(this.url + "numero/"+ numeroCuenta);
    }
+   
    buscarcuentaById(codCuenta : number):Observable<any> {
-    return this.http.get<any>(this.url + codCuenta);
+    const url = `${this.url}${codCuenta}`;
+    return this.http.get<any>(url);    
    }
+
    TransaccionRetiro(RegistroRetiro : any):Observable<any> {
-    return this.http.post<any>(this.url + "retiros/", RegistroRetiro); 
+    console.log(RegistroRetiro);
+    return this.http.put<any>(this.urlt + "retiros", RegistroRetiro); 
    }
+
 }

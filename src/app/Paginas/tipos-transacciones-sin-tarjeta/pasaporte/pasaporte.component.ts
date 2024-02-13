@@ -21,24 +21,10 @@ export class PasaporteComponent  {
       this.numeroPasaporte = '';
     }
     else if (button === '✓') {
-      this.validarExistenciaCliente.buscarCliente('PAS', this.numeroPasaporte).subscribe({
-        next: (response) => {
-        if(response!=null){
-          this.servicioDato.SetNumeroPasaporte(this.numeroPasaporte);
-          this.router.navigate(['tipos/cuenta']);
-        }else {
-          Swal.fire({
-            icon: "error",
-            title: "Identificacion incorrecta",
-            text: "No se ha encontrado el pasaporte ingresado.",
-          });
-        }
-          console.log(response);
-        }
-      }); //poque se usa apis
+      this.router.navigate(['tipos/cuenta']);
     }
     else {
-      if (this.numeroPasaporte.length == 13) {
+      if (this.numeroPasaporte.length == 10) {
         return;
       }
       this.numeroPasaporte += button;

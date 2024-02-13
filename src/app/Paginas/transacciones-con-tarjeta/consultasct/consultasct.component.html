@@ -19,8 +19,14 @@
                             <p style="font-size: 14px; line-height: 0.5em">
                                 Propietario: {{clientesData.apellidos}} {{clientesData.nombres}}
                             </p>
-                            <p style="font-size: 14px; line-height: 0.5em">
-                                Tipo Cuenta: {{cuentaData.codTipoCuenta}}
+                            <p>
+                                Tipo cuenta: 
+                                <ng-container *ngIf="cuentaData.codTipoCuenta === 'CTA_AHOR'">
+                                    AHORROS
+                                </ng-container>
+                                <ng-container *ngIf="cuentaData.codTipoCuenta !== 'CTA_AHOR'">
+                                    {{ cuentaData.codTipoCuenta }}
+                                </ng-container>
                             </p>
                             <p style="font-size: 14px; line-height: 0.5em">
                                 No. de Cuenta: {{cuentaData.numeroCuenta}}
