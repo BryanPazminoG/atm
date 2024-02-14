@@ -7,7 +7,7 @@
                     <h4>Confirmación Retiro Bancarios</h4>
                 </div>
                 <div class="row contenido my-3 p-5 rounded-4">
-                    <h5>Comprobante de Retiro</h5>
+                    <h5>Confirmación de Retiro</h5>
                     <form action="">
                         <div class="col-12 my-3 p-4 rounded-3" style="background-color: #ececec">
                             <p style="color: #3d84a7; line-height: 0.8em">
@@ -32,12 +32,13 @@
                         </div>
                     </form>
                     <div class="px-4 mt-3">
+                        <button (click)="volver()" type="button" class="btn btn-secondary mx-1">
+                            Regresar
+                        </button>
                         <button (click)="salida()" type="button" class="btn btn-success mx-1">
                             Confirmar
                         </button>
-                        <button type="button" class="btn btn-secondary mx-1">
-                            Regresar
-                        </button>
+                        
                     </div>
                 </div>
             </div>

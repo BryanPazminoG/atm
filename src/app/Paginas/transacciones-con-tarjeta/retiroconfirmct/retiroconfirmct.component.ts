@@ -68,5 +68,8 @@ export class RetiroconfirmctComponent implements OnInit {
     });
     
   }
+  volver() {
+    this.router.navigate(['transacciont/cantidadretiro']);
+  }
 
 }
