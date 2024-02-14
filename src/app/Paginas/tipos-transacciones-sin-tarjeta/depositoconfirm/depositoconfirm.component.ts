@@ -42,7 +42,8 @@ constructor(
     this.valorDeposito = this.flujoDatos.GetCantidadDeposito();
     this.numeroCuenta = this.flujoDatos.GetNumeroCuenta();
     this.clientesData = this.flujoDatos.GetClientesData();
-
+  
+    console.log("fechadeposito", this.flujoDatos.GetFechaDeposito());
     this.getCuenta();
   }
 
@@ -88,7 +89,7 @@ constructor(
     return cadenaFecha;
   }
   salida() {
-    this.fechaDeposito = this.convertirFechaAString(new Date());
+    this.fechaDeposito = (new Date()).toString();
     let registroDeposito = {
       "numeroCuenta": this.numeroCuenta,
       "valorDebe": this.valorDeposito,

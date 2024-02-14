@@ -1,4 +1,5 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
 import html2canvas from 'html2canvas';
 import jsPDF from 'jspdf';
@@ -37,7 +38,8 @@ export class ComprobantedepositostComponent implements OnInit{
     this.valorDeposito = this.flujoDatos.GetCantidadDeposito();
     this.cuentaData = this.flujoDatos.GetCuentaData();
     this.clientesData = this.flujoDatos.GetClientesData();
-    this.fechaDeposito = this.flujoDatos.GetFechaDeposito();
+
+    this.fechaDeposito = new Date();
   }
 
   async Imprimir() {
