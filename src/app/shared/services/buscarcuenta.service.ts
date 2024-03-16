@@ -10,13 +10,15 @@ import { Observable } from 'rxjs';
 export class BuscarcuentaService {
 url: string =''; 
 urlt: string =''; 
+
   constructor(private http:HttpClient) {
-    this.url='http://35.192.152.130:8089/api/v1/cuentas/'; 
-    this.urlt='http://35.192.152.130:8089/api/v1/transacciones/'; 
+    this.url='http://35.232.62.178:8080/api/v1/cuentas/'; 
+    this.urlt='http://35.232.62.178:8080/api/v1/transacciones/'; 
    }
-   buscarcuenta(numeroCuenta : string):Observable<any> {
-    return this.http.get<any>(this.url + "numero/"+ numeroCuenta);
-   }
+   buscarcuenta(numeroCuenta: string): Observable<any> {
+    const urlWithParams = `${this.url}?numeroCuenta=${numeroCuenta}`;
+    return this.http.get<any>(urlWithParams);
+  }
    
    buscarcuentaById(codCuenta : number):Observable<any> {
     const url = `${this.url}${codCuenta}`;

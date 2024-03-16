@@ -39,8 +39,7 @@ export class PanelclaveComponent implements OnInit {
   }
 
   seleccionCt() {
-    if (this.numeroClave == this.targetaClave.pin) {
-      console.log("datos se seleccionCT", this.numeroClave, this.targetaClave.pin);
+    if (this.numeroClave) {
       this.datosFlujo.SetValidacionClave(true);
       
       this.router.navigate(['transacciont/selecciont']);
@@ -55,6 +54,8 @@ export class PanelclaveComponent implements OnInit {
   }
 
   validarClave(): void {
+
+    console.log(this.datosFlujo.GetTargeta())
     this.clave.validarClave(this.datosFlujo.GetTargeta(), this.numeroClave)
       .subscribe(
         (data) => {

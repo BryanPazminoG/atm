@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class ValidarClaveService {
-  private validarClaveUrl = "http://34.132.237.244:8097/api/v1/seguridad-tarjeta/sesion";
+  private validarClaveUrl = "http://127.0.0.1:8080/api/v1/seguridad-tarjeta/sesion";
 
   constructor(private http: HttpClient) { }
 
