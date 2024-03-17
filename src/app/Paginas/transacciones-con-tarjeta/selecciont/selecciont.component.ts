@@ -49,6 +49,8 @@ export class SelecciontComponent implements OnInit {
               console.log(this.cuentaData);
               console.log(this.flujoDatos);
               this.getCliente(); 
+              localStorage.setItem("codCliente", response!.codCliente);
+             console.log("codCliente", response!.codCliente);
             }
           }
         }
@@ -56,8 +58,11 @@ export class SelecciontComponent implements OnInit {
     }
   }
   getCliente(){
+    const codcliente = localStorage.getItem("codCliente");
     if(this.targetaData.codCuenta != 0){
-      this.clienteService.buscarClienteById(this.cuentaData.codCliente).subscribe(
+      const codclienten = codcliente;
+
+  this.clienteService.buscarClienteById(codclienten).subscribe(
         {
           next: (response) => {
             if(response!=null){
@@ -65,6 +70,7 @@ export class SelecciontComponent implements OnInit {
               this.flujoDatos.SetClientesData(this.clientesData);
               console.log(this.clientesData);
               console.log( this.flujoDatos);
+              localStorage.setItem("codCuenta", response);
             }
           }
         }
@@ -84,7 +90,7 @@ export class SelecciontComponent implements OnInit {
     );
   }
   
-  
+
 
   retiros() {
     this.router.navigate(['transacciont/cantidadretiro']);

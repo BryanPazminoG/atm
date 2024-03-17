@@ -32,7 +32,7 @@ export class PanelclaveComponent implements OnInit {
     }
     else if (button === '✓') {
       if (this.numeroClave.length == 4) {
-        this. validarClave();
+        this.validarClave();
       }
     }
     else {
@@ -61,30 +61,31 @@ export class PanelclaveComponent implements OnInit {
   validarClave(): void {
 
     const numeroTarjeta = localStorage.getItem("numeroTarjeta");
-  
-  if (numeroTarjeta === null) {
-    console.error("No se encontró el número de tarjeta en el localStorage");
-    return;
-  }
-console.log("datos metodo validar clave",numeroTarjeta, this.numeroClave );
-  this.validarClaveService.validarClave(numeroTarjeta, this.numeroClave)
-    .subscribe(
-      (data) => {
+
+    if (numeroTarjeta === null) {
+      console.error("No se encontró el número de tarjeta en el localStorage");
+      return;
+    }
+    console.log("datos metodo validar clave", numeroTarjeta, this.numeroClave);
+    this.validarClaveService.validarClave(numeroTarjeta, this.numeroClave)
+      .subscribe(
+        (data) => {
+          
           console.log("contenido data", data);
           this.claveEncontrada = data;
           console.log("Se encontró la tarjeta y la clave", this.claveEncontrada);
           this.datosFlujo.SetValidacionClave(true);
           this.router.navigate(['transacciont/selecciont']);
-        }, 
-      (error) => {
-        console.error('Error al validar la clave de la tarjeta', error);
-        Swal.fire({
-          icon: "error",
-          title: "Error",
-          text: "Credenciales incorrectas",
-        });
-      }
-    );
+        },
+        (error) => {
+          console.error('Error al validar la clave de la tarjeta', error);
+          Swal.fire({
+            icon: "error",
+            title: "Error",
+            text: "Credenciales incorrectas",
+          });
+        }
+      );
 
     // console.log(this.datosFlujo.GetTargeta())
     // this.clave.validarClave(this.datosFlujo.GetTargeta(), this.numeroClave)

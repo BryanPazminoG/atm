@@ -81,6 +81,18 @@ export class ComprobanteretiroctComponent implements OnInit{
     }
     pdf.save('comprobante.pdf');
   }
+//   getTipoCuentaEquivalente(): string {
+//     switch (this.cuentaData.codTipoCuenta) {
+//         case 'CTA_PERS':
+//             return 'CUENTA PERSONAL DE AHORROS';
+//         case 'CTA_CONJ':
+//             return 'CUENTA CONJUNTA DE AHORROS';
+//         case 'CTA_EMPR':
+//             return 'CUENTA EMPRESARIAL DE AHORROS';
+//         default:
+//             return 'No se encuentra el tipo de empresa'; 
+//     }
+// }
 
   volver() {
     this.router.navigate(['transacciont/selecciont']);

@@ -54,8 +54,8 @@ export class RetiroconfirmctComponent implements OnInit {
         "valorHaber": this.valorRetiro,
         "canal": "ATM",
       };
-    
-    console.log(retiroRegistro);
+  
+    console.log(retiroRegistro.codCuenta);
     this.cuentaService.TransaccionRetiro(retiroRegistro).subscribe({
       next: () => {
         this.flujoDatos.SetFechaRetiro(this.fechaRetiro);
@@ -86,6 +86,8 @@ export class RetiroconfirmctComponent implements OnInit {
     //           });
             
              }
+
+
 
   volver() {
     this.router.navigate(['transacciont/cantidadretiro']);

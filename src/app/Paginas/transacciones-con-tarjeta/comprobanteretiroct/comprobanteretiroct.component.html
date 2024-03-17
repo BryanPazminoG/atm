@@ -1,5 +1,5 @@
 <div class="screen-flex-vertical gap-2">
-    
+
     <div class="card fondo gap-5" #contenedor>
         <div class="d-flex gap-3 mx-auto">
             <label class="fw-bold fs-2">Transacción existosa</label>
@@ -12,13 +12,21 @@
             <div>
                 <strong>Se ha retirado la cantidad de: {{valorRetiro}}</strong>
                 <br>
-                <strong>Tipo cuenta: 
-                    <ng-container *ngIf="cuentaData.codTipoCuenta === 'CTA_AHOR'">
-                        AHORROS
-                    </ng-container>
-                    <ng-container *ngIf="cuentaData.codTipoCuenta !== 'CTA_AHOR'">
-                        {{ cuentaData.codTipoCuenta }}
-                    </ng-container>
+                <strong>Tipo cuenta:
+                <ng-container *ngIf="cuentaData.codTipoCuenta === 'CTA_PERS'">
+                    CUENTA PERSONAL DE AHORROS
+                </ng-container>
+                <ng-container *ngIf="cuentaData.codTipoCuenta === 'CTA_CONJ'">
+                    CUENTA CONJUNTA DE AHORROS
+                </ng-container>
+                <ng-container *ngIf="cuentaData.codTipoCuenta === 'CTA_EMPR'">
+                    CUENTA EMPRESARIAL DE AHORROS
+                    {{ cuentaData.codTipoCuenta }}
+                </ng-container>
+                <ng-container
+                    *ngIf="cuentaData.codTipoCuenta !== 'CTA_PERS' && cuentaData.codTipoCuenta !== 'CTA_CONJ' && cuentaData.codTipoCuenta !== 'CTA_EMPR'">
+                    No se encuentra el tipo de cuenta
+                </ng-container>
                 </strong>
                 <br>
                 <strong>Numero de cuenta: {{cuentaData.numeroCuenta}}</strong>
@@ -30,10 +38,10 @@
             </div>
         </div>
         <div class="d-flex justify-content-center">
-            <button (click)="volver()" type="submit" class="btn btn-success mx-1" >
+            <button (click)="volver()" type="submit" class="btn btn-success mx-1">
                 Realizar otra transacción
             </button>
-            <button (click)="Imprimir()" type="submit" class="btn btn-primary mx-1" >
+            <button (click)="Imprimir()" type="submit" class="btn btn-primary mx-1">
                 Imprimir
             </button>
         </div>

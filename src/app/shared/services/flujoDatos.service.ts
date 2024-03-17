@@ -61,6 +61,7 @@ export class FlujoDatosService {
   }
   SetCuentaData(cuentaData: any) {
     this.cuentaData = cuentaData;
+   
   }
   SetValidacionClave(validacionClave: boolean) {
     this.validacionClave = validacionClave;

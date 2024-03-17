@@ -59,20 +59,29 @@ constructor(
           this.flujoDatos.SetNumeroCuenta(this.numeroCuenta);
           this.flujoDatos.SetCuentaData(this.cuentaData);
           this.getCliente();
+          localStorage.setItem("codCliente", response!.codCliente);
+          console.log("codCliente", response!.codCliente);
         }
       }
     });
   }
 
   getCliente() {
-    this.clienteService.buscarClienteById(this.cuentaData.codCliente).subscribe({
-      next: (response) => {
-        if (response != null) {
-          this.clientesData = response;
-          this.flujoDatos.SetClientesData(this.clientesData);
-        }
+const codcliente = localStorage.getItem("codCliente");
+if (codcliente!== null){
+  const codclienten = codcliente;
+
+  this.clienteService.buscarClienteById(codclienten).subscribe({
+    next: (response) => {
+      if (response != null) {
+        this.clientesData = response;
+        this.flujoDatos.SetClientesData(this.clientesData);
+
       }
-    });
+    }
+  });
+}
+    
   }
   regresar(){
     this.router.navigate(['tipos/cantidad']);
