@@ -47,45 +47,45 @@ export class RetiroconfirmctComponent implements OnInit {
 
     return cadenaFecha;
   }
-  // salida() {
-  //   this.fechaRetiro = this.convertirFechaAString(new Date());
-  //   let retiroRegistro = {
-  //     "numeroCuenta": this.cuentaData.numeroCuenta,
-  //     "valorHaber": this.valorRetiro
-  //   }
-  //   console.log(retiroRegistro);
-  //   this.cuentaService.TransaccionRetiro(retiroRegistro).subscribe({
-  //     next: () => {
-  //       this.flujoDatos.SetFechaRetiro(this.fechaRetiro);
-  //       this.router.navigate(['transacciont/salida']);
-  //     },
-  //     error: (error) => {
-  //       console.error('Error al realizar la transacción de retiro:', error);
-  //     }
-  //   });
-    salida() {
-      this.fechaRetiro = this.convertirFechaAString(new Date());
+  salida() {
+    this.fechaRetiro = this.convertirFechaAString(new Date());
+    let retiroRegistro = {
+        "codCuenta": this.cuentaData.codCuenta,
+        "valorHaber": this.valorRetiro,
+        "canal": "ATM",
+      };
+    
+    console.log(retiroRegistro);
+    this.cuentaService.TransaccionRetiro(retiroRegistro).subscribe({
+      next: () => {
+        this.flujoDatos.SetFechaRetiro(this.fechaRetiro);
+        this.router.navigate(['transacciont/salida']);
+      },
+      error: (error) => {
+        console.error('Error al realizar la transacción de retiro:', error);
+      }
+    });
+    // salida() {
+    //   this.fechaRetiro = this.convertirFechaAString(new Date());
       
-              let retiroRegistro = {
-                "codCuenta": this.cuentaData.codCuenta,
-                "valorHaber": this.valorRetiro,
-                "canal": "ATM",
-              };
+    //           let retiroRegistro = {
+    //             "codCuenta": this.cuentaData.codCuenta,
+    //             "valorHaber": this.valorRetiro,
+    //             "canal": "ATM",
+    //           };
     
-              console.log(retiroRegistro);
+    //           console.log(retiroRegistro);
     
-              this.cuentaService.TransaccionRetiro(retiroRegistro).subscribe({
-                next: () => {
-                  this.router.navigate(['transacciont/salida']);
-                },
-                error: (error) => {
-                  console.error('Error al realizar la transacción de retiro:', error);
-                }
-              });
+    //           this.cuentaService.TransaccionRetiro(retiroRegistro).subscribe({
+    //             next: () => {
+    //               this.router.navigate(['transacciont/salida']);
+    //             },
+    //             error: (error) => {
+    //               console.error('Error al realizar la transacción de retiro:', error);
+    //             }
+    //           });
             
-            }
-        
-  
+             }
 
   volver() {
     this.router.navigate(['transacciont/cantidadretiro']);

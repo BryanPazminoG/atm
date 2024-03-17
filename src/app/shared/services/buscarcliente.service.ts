@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 export class BuscarclienteService {
 url: string = '';
 constructor(private http:HttpClient) { 
-  this.url='https://clientes-atnhilz3dq-rj.a.run.app/api/v1/clientes/naturales/';
+  this.url='https://clientes-atnhilz3dq-rj.a.run.app/api/v1/clientes/';
 }
 buscarCliente(tipoI : string,numeroIdentificacion : string):Observable<any>{
   let params = new HttpParams().set('tipo', tipoI).set('numero', numeroIdentificacion)

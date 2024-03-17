@@ -10,13 +10,14 @@ import { Observable } from 'rxjs';
 export class BuscarcuentaService {
 url: string =''; 
 urlt: string =''; 
-
+urltd: string =''; 
   constructor(private http:HttpClient) {
     this.url='https://cuentas-atnhilz3dq-uc.a.run.app/api/v1/cuentas/'; 
     this.urlt='https://cuentas-atnhilz3dq-uc.a.run.app/api/v1/transacciones'; 
+    this.urltd='https://cuentas-atnhilz3dq-uc.a.run.app/api/v1/tarjetas/';
    }
    buscarcuenta(numeroCuenta: string): Observable<any> {
-    const urlWithParams = `${this.url}?numeroCuenta=${numeroCuenta}`;
+    const urlWithParams = `${this.url}?numeroCuenta=${numeroCuenta}`;   
     return this.http.get<any>(urlWithParams);
   }
    
@@ -30,4 +31,9 @@ urlt: string ='';
     return this.http.post<any>(this.urlt + "/retiros", RegistroRetiro);
   }
 
+  buscarDatosTarjeta(numeroTarjeta: string):Observable<any> {
+    const urlWithParams = `${this.urltd}?numero=${numeroTarjeta}`;  
+    return this.http.get<any>(urlWithParams);    
+   }
+  
 }

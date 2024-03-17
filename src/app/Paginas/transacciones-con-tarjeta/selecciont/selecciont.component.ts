@@ -26,16 +26,19 @@ export class SelecciontComponent implements OnInit {
     "saldoDisponible": 0,
 };
   targetaData = {
-    "codCuenta": 0,
+    "codTarjeta": "",
+    "codCuenta":0
   };
   constructor(private router: Router, private flujoDatos:FlujoDatosService, private cuentaService:BuscarcuentaService, private clienteService:BuscarclienteService) { }
   
   ngOnInit(): void {
-    this.targetaData = this.flujoDatos.GetTargeta();
-    this.getCuenta();
+    this.targetaData.codTarjeta = this.flujoDatos.GetTargeta();
+    console.log(this.targetaData);
+    this.getDatosTarjeta();
     console.log(this.getCuenta);
   }
   getCuenta(){
+    console.log("codigo cuentaaa: ", this.targetaData.codCuenta);
     if(this.targetaData.codCuenta != 0){
       this.cuentaService.buscarcuentaById(this.targetaData.codCuenta).subscribe(
         {
@@ -68,6 +71,21 @@ export class SelecciontComponent implements OnInit {
       );
     }
   }
+  getDatosTarjeta(){
+    this.cuentaService.buscarDatosTarjeta(this.targetaData.codTarjeta).subscribe(
+    {
+      next: (Response)=> {
+        if(Response!=null){
+          this.targetaData.codCuenta=Response.codCuenta;
+          this.getCuenta();
+        }
+      }
+    }
+    );
+  }
+  
+  
+
   retiros() {
     this.router.navigate(['transacciont/cantidadretiro']);
   }
