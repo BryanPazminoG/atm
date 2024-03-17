@@ -24,7 +24,7 @@ export class ConsultasctComponent implements OnInit{
     "saldoContable": 0,
     "saldoDisponible": 0,
 };
-  @ViewChild('contenedor', { static: false }) contenedor!: ElementRef; // Hace una referencia de una parte del html para el uso en la lógica
+  @ViewChild('contenedor', { static: false }) contenedor!: ElementRef; 
 
   constructor(private router: Router, private flujoDatos:FlujoDatosService) { }
   ngOnInit(): void {

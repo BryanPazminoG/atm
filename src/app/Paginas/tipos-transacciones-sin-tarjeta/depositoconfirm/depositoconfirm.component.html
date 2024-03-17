@@ -16,15 +16,17 @@
           Deposito Bancario
         </p>
         <p style="font-size: 14px; line-height: 0.5em">
-          Se depositará la cantidad de: {{ valorDeposito }}
+          <strong> Depositará la cantidad de: </strong> $ {{ valorDeposito }}
         </p>
         <p style="font-size: 14px; line-height: 0.5em">
-          Al número de cuenta: {{ cuentaData.numeroCuenta }}
+          <strong> Número de cuenta: </strong> {{ cuentaData.numeroCuenta }}
         </p>
         <p style="font-size: 14px; line-height: 0.5em">
-          Nombre del beneficiario: {{ clientesData.apellidos }} {{ clientesData.nombres }}
+          <strong> Del beneficiario: </strong>{{ clientesData.apellidos }} {{ clientesData.nombres }}
         </p>
-
+        <p style="font-size: 14px; line-height: 0.5em">
+        <strong>Fecha: </strong> {{ getCurrentDate() | date: 'medium' }}
+        </p>
       </div>
       <div class="px-4 mt-3 d-flex justify-content-end align-items-end">
         <button type="button" class="btn btn-secondary mx-1"(click)="regresar()">
@@ -38,4 +40,3 @@
     </div>
   </div>
 </div>
-

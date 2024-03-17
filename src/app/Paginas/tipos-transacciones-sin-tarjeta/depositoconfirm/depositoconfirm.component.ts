@@ -13,7 +13,11 @@ import { GuardarDepositoService } from 'src/app/shared/services/guardarDeposito.
 export class DepositoconfirmComponent implements OnInit {
   valorDeposito: number = 0;
   fechaDeposito: string = "";
-  numeroCuenta: string = ''; // Agrega la declaración de la variable numeroCuenta
+  numeroCuenta: string = ''; 
+
+  getCurrentDate(): Date {
+    return new Date();
+  }
 
   clientesData = {
     "codigo": 5,
@@ -74,6 +78,16 @@ constructor(
     this.router.navigate(['tipos/cantidad']);
   }
 
+  // confirmar(){
+  //   this.router.navigate(['tipos/comprobantedepositos']);
+  //   this.fechaDeposito = (new Date()).toString();
+  //   let registroDeposito = {
+  //     "numeroCuenta": this.numeroCuenta,
+  //     "valorDebe": this.valorDeposito,
+  //     "fechaCreacion": this.fechaDeposito,
+  //   }
+  // }
+
   convertirFechaAString(fecha: Date) {
     // Obtén los componentes de la fecha
     const año = fecha.getFullYear();
@@ -89,21 +103,32 @@ constructor(
     return cadenaFecha;
   }
   salida() {
+    this.router.navigate(['tipos/comprobantedepositos']);
     this.fechaDeposito = (new Date()).toString();
-    let registroDeposito = {
-      "numeroCuenta": this.numeroCuenta,
-      "valorDebe": this.valorDeposito,
-      "fechaCreacion": this.fechaDeposito
-  }
-console.log(registroDeposito);
-    this.guardarDeposito.guardarDeposito(registroDeposito).subscribe(
+    this.cuentaService.buscarcuenta(this.numeroCuenta).subscribe(
       {
-        next: (response) => {
+        next:(response)=>{
           if (response != null) {
-            this.router.navigate(['tipos/comprobantedepositos']);
+            let registroDeposito = {
+            "codCuenta": response.codCuenta,
+            "valorDebe": this.valorDeposito,
+            "canal": "ATM",
+            }
+            console.log(registroDeposito);
+            this.guardarDeposito.guardarDeposito(registroDeposito).subscribe(
+              {
+                next: (response) => {
+                  if (response != null) {
+                    this.router.navigate(['tipos/comprobantedepositos']);
+                  }
+                }
+              }
+            );
           }
         }
       }
     );
+    
+    
   }
 }

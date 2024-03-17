@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class ValidarClaveService {
-  private validarClaveUrl = "http://127.0.0.1:8080/api/v1/seguridad-tarjeta/sesion";
+  private validarClaveUrl = "https://seg-tarjetas-atnhilz3dq-uc.a.run.app/api/v1/seguridad-tarjeta/sesion";
 
   constructor(private http: HttpClient) { }
 
@@ -19,7 +19,7 @@ export class ValidarClaveService {
       numTarjeta: numeroTarjeta,
       claveTarjeta: claveTarjeta
     };
-
+console.log("se ejecuta validar clave", body);
     return this.http.post<any>(this.validarClaveUrl, body, { headers });
     
   }

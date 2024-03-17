@@ -8,9 +8,10 @@ import { Observable } from 'rxjs';
 export class GuardarDepositoService {
 url: string =''; 
 constructor(private http: HttpClient) {
-  this.url = 'http://35.232.62.178:8080/api/v1/transacciones';
+  this.url = 'https://cuentas-atnhilz3dq-uc.a.run.app/api/v1/transacciones';
 }
 guardarDeposito(registroDeposito: any): Observable<any> {
+  console.log(registroDeposito);
   return this.http.post<any>(this.url + "/depositos", registroDeposito);
 }
 
